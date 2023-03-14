@@ -1,0 +1,16 @@
+{{template "base" .}}
+
+{{define "container"}}
+    <h1>About page</h1>
+
+    <br>
+    <br>
+    <p>
+        This Info from template data: {{index .StringMap "name"}}
+    </p>
+        {{if ne (index .StringMap "remote_addr") ""}}
+            Your Remote IP address is : {{ index .StringMap "remote_addr"}}
+        {{else}}
+            you don't register your ip address this app, please retrun to <a href="/">home page</a>
+        {{end}}
+{{end}}
